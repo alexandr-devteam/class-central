@@ -2152,11 +2152,26 @@ a:focus .card-back__interaction-text {
   }
 }
 
+
 .modal-dialog__large {
   max-width: 964px;
   margin: 30px auto;
   padding: 0 15px;
   width: auto;
+}
+
+.modal-dialog__xl {
+  max-width: 1000px;
+  width: auto;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+@media (min-width: 1030px) {
+  .modal-dialog__xl {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /**

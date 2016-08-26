@@ -10,6 +10,16 @@
             {{#if payload.provider}}
             <span class="course-provider">&nbsp;via {{payload.provider}}</span>
             {{/if}}
+            <span class="session_hoverMeta" data-href="#">
+                <span class="session_hoverMetaIcon">
+                    <div class="u-scaling-svg">
+                        <svg class="u-scalingSvg__shape">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-direct-link"></use>
+                        </svg>
+                    </div>
+                </span>
+                <span class="session_hoverMetaText">Direct to class</span>
+            </span>
         </div>
     </a>
 </script>
@@ -29,6 +39,18 @@
         {{#if payload.count}}
         <span class="course-count">Earn a Credential</span>
         {{/if}}
+        <div class="session-wrap">
+            <span class="session_hoverMeta" data-href="#">
+                <span class="session_hoverMetaIcon">
+                    <div class="u-scaling-svg">
+                        <svg class="u-scalingSvg__shape">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-direct-link"></use>
+                        </svg>
+                    </div>
+                </span>
+                <span class="session_hoverMetaText">Direct to class</span>
+            </span>
+        </div>
     </a>
 </script>
 
@@ -67,6 +89,8 @@
             {{#if payload.provider}}
             <span class="course-provider">&nbsp;via {{payload.provider}}</span>
             {{/if}}
+
+
         </div>
     </a>
 </script>

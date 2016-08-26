@@ -959,18 +959,7 @@ jQuery(function($) {
         }
     });
 
-    $(document).bind('keydown', function(e) {
-        if(e.ctrlKey && (e.which == 76)) {
-            e.preventDefault();
-            $( "#navbar-search-form #st-search-input" ).focus();
-            return false;
-        }
-    });
-
-
     //general search form typeahead
-
-
     $('#general-search #st-search-input').on("keydown.cc", function (e) {
         $this = $(this);
         if (e.which == 13) {
@@ -1049,6 +1038,133 @@ jQuery(function($) {
         $this = $(this);
         if (e.which == 38 || e.which == 40 ) {
             if ($('#general-search .tt-suggestion.tt-cursor .suggestions-footer').length) {
+                $this.val($this.typeahead('val'));
+            }
+        }
+    });
+
+    // search modal
+    $(document).bind('keydown', function(e) {
+        if(e.ctrlKey && (e.which == 76)) {
+            e.preventDefault();
+            $('#searchModal').modal('show');
+            return false;
+        }
+    });
+
+    $('body').on('click', '.js-openSearchModal', function(e) {
+        e.preventDefault();
+        $('#searchModal').modal('show');
+    });
+
+    $('.js-searchModalInput').on('focus', function (e) {
+        $(this).closest('.js-searchWrap').removeClass('is-middle');
+        $(this).closest('.js-searchWrap').find('.js-dynamicSearchContent *').fadeOut(200);
+    });
+
+    $('.js-searchModalInput').on('blur', function (e) {
+        var $this = $(this);
+        setTimeout(function () {
+            $this.closest('.js-searchWrap').addClass('is-middle');
+            $this.closest('.js-searchWrap').find('.js-dynamicSearchContent *').fadeIn(200);
+        }, 100);
+    });
+
+    // search modal typeahead
+
+    $('.js-searchModalInput').on("keydown.cc", function (e) {
+        $this = $(this);
+        if (e.which === 13) {
+
+            if ($('.js-typeaheadSearch .tt-suggestion.tt-cursor a').attr('href') !== undefined && $('.js-typeaheadSearch .tt-suggestion.tt-cursor .search-view-all').length === 0) {
+                var dataType = $('.js-typeaheadSearch .tt-suggestion.tt-cursor a').data("type");
+                var dataName = $('.js-typeaheadSearch .tt-suggestion.tt-cursor a').data("name");
+
+                window.location = $('.js-typeaheadSearch .tt-suggestion.tt-cursor a').attr('href');
+
+                try {
+                    ga('send', 'event', 'Search Autocomplete', dataType, dataName);
+                } catch (e) { }
+            } else if ($('.js-typeaheadSearch .tt-suggestion.tt-cursor .search-view-all').length) {
+                $('.js-typeaheadSearch').submit();
+                return false;
+            } else if ($this.is(":focus")) {
+                $('.js-typeaheadSearch').submit();
+            }
+        }
+    });
+
+
+    // searchmodal hover styles
+    $('.searchModal_contentBlock').hover(function () {
+        $(this).find('.searchModal_seeMore').toggleClass('is-shown');
+    });
+
+    $('.courseLink').hover(function () {
+        $(this).find('.courseLink_hoverMeta').toggleClass('is-shown');
+    });
+
+    $('body').on('click', '.session_hoverMeta', function (e) {
+        if ($(this).data('href')) {
+            document.location.href = $(this).data('href');
+            e.stopPropagation();
+            return false;
+        }
+    });
+
+
+
+    $('.js-searchModalInput')
+        .typeahead(null, {
+            name: '',
+            displayKey: 'name',
+            source: ccSearch.ttAdapter(),
+            templates: {
+                empty: [],
+                suggestion: function (data) {
+                    var templateScript;
+
+                    if (data.payload.type === "course") {
+                        templateScript = $("#course-template").html();
+                    } else if (data.payload.type === "subject") {
+                        templateScript = $("#subject-template").html();
+                    } else if (data.payload.type === "credential") {
+                        templateScript = $("#credential-template").html();
+                    } else if (data.payload.type === "provider") {
+                        templateScript = $("#provider-template").html();
+                    } else if (data.payload.type === "institution") {
+                        templateScript = $("#uni-template").html();
+                    } else if (data.payload.type === "footer-template") {
+                        templateScript = $("#footer-template").html();
+                    } else {
+                        templateScript = $("#base-template").html();
+                    }
+
+                    var suggestionTemplate = Handlebars.compile(templateScript);
+                    return suggestionTemplate(data);
+                }
+            }
+        })
+        .on('typeahead:opened', function () {
+            $('.js-dynamicSearchContent').hide();
+        })
+        .on('typeahead:closed', function () {
+            $('.js-dynamicSearchContent').show();
+        });
+
+
+
+    $('.js-typeaheadSearch .tt-dropdown-menu').on('click', '.search-view-all', function (e) {
+        e.preventDefault();
+        $('.js-searchModalInput').val($('.js-searchModalInputt').typeahead('val'));
+        $('.js-typeaheadSearch').submit();
+        return false;
+    });
+
+    $('.js-searchModalInput').on("keydown.cc", function (e) {
+        $this = $(this);
+        if (e.which === 38 || e.which === 40) {
+            if ($('.js-typeaheadSearch .tt-suggestion.tt-cursor .suggestions-footer').length) {
                 $this.val($this.typeahead('val'));
             }
         }
@@ -1351,6 +1467,20 @@ jQuery(function($) {
 
     closableAd('.js-closable-ad');
 
+
+
+    // mainmenu dropdown toggles
+    $("body").on("click", ".js-toggleSub", function (e) {
+        e.preventDefault();
+        $(this).parent().toggleClass("sub-open");
+    });
+
+    $("body").on("click", function (e) {
+        if ($(e.target).closest(".mainMenu_item.dropdown").length <= 0) {
+            $('.mainMenu_item.dropdown').removeClass('sub-open');
+        }
+    });
+
     /**
      * Create a tour for Top 50 free online courses
      */
@@ -1394,8 +1524,6 @@ jQuery(function($) {
     };
     initTourPoints(tour);
 
-    /**
-     * End Tour
-     * */
+
 
 });
