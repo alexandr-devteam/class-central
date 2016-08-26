@@ -1,0 +1,713 @@
+
+<!-- search modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="write-modal-title-here" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-dialog__xl" role="document">
+        <div class="searchModal_wrap">
+            <a href="#" class="searchModal_close" data-dismiss="modal" aria-label="Close"></a>
+            <div class="searchModal">
+                <div class="searchModal_main">
+                    <div class="searchModal_mainContent">
+
+                        <div class="searchModal_searchWrap is-middle js-searchWrap">
+                            <div class="searchModal_search">
+                                <form class="plainSearch js-typeaheadSearch" action="/search" method="get" name="search">
+                                    <button class="plainSearch_button" type="submit">
+                                        <div class="u-scaling-svg">
+                                            <svg class="u-scalingSvg__shape plainSearch_buttonShape">
+                                                <use xlink:href="#shape-search-icon"></use>
+                                            </svg>
+                                        </div>
+                                    </button>
+                                    <input type="text" class="plainSearch_input js-searchModalInput" placeholder="search" value name="q">
+                                </form>
+                            </div>
+                            <div class="js-dynamicSearchContent">
+                                <div class="searchModal_contentBlock searchModal_contentBlock-reducedSpacing">
+                                    <h3 class="searchModal_sectionTitle searchModal_sectionTitle-reducedMargin">Previous searches</h3>
+                                    <div class="searchModal_text">
+                                        <a href="#">marketing</a>, <a href="#">marketing science</a>, <a href="#">marketing</a>, <a href="#">marketing science</a>, <a href="#">marketing</a>, <a href="#">marketing science</a>,
+                                        <a href="#">marketing</a>, <a href="#">marketing science</a>, <a href="#">marketing science</a>
+                                    </div>
+                                </div>
+
+                                <div class="searchModal_contentBlock searchModal_contentBlock-reducedSpacing">
+                                    <h3 class="searchModal_sectionTitle searchModal_sectionTitle-reducedMargin">Recently viewed courses</h3>
+                                    <div class="searchModal_text">
+                                        <div>
+                                            <a href="#">Creating Engaging Environments for English Language Classrooms</a>
+                                        </div>
+                                        <div>
+                                            <a href="#">How Things Work: An Introduction to Physics</a>
+                                        </div>
+                                        <div>
+                                            <a href="#">Programming for Everybody (Getting Started With Python)</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="searchModal_footer">
+                            <div class="searchModal_footerUnit">
+                                <div class="searchModal_icon searchModal_icon-navigate">
+                                    <div class="u-scaling-svg">
+                                        <svg class="u-scalingSvg__shape">
+                                            <use xlink:href="#shape-navigate"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <span class="searchModal_footerText">to navigate</span>
+
+                            </div>
+                            <div class="searchModal_footerUnit">
+                                <div class="searchModal_icon searchModal_icon-enter">
+                                    <div class="u-scaling-svg">
+                                        <svg class="u-scalingSvg__shape">
+                                            <use xlink:href="#shape-enter"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <span class="searchModal_footerText">to select result</span>
+
+                            </div>
+                            <div class="searchModal_footerUnit">
+                                <div class="searchModal_icon searchModal_icon-esc">
+                                    <div class="u-scaling-svg">
+                                        <svg class="u-scalingSvg__shape">
+                                            <use xlink:href="#shape-esc"></use>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <span class="searchModal_footerText">to close search</span>
+
+                            </div>
+                        </div><!-- /.searchModal_footer -->
+                    </div><!-- /.searchModal_main -->
+                </div>
+
+                <div class="searchModal_sidebar">
+                    <div class="searchModal_sidebarContent">
+
+                        <div class="searchModal_contentBlock">
+                            <h3 class="searchModal_sectionTitle">Trending</h3>
+
+                            <ul class="courseLinks">
+                                <li class="courseLinks_item">
+                                    <div class="courseLink">
+                                        <div class="courseLink_icon">
+                                            <div class="u-scaling-svg">
+                                                <svg class="u-scalingSvg__shape">
+                                                    <use xlink:href="#shape-trending"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="courseLink_title">Agincourt 1415: Myth and Reality</a>
+                      <span class="courseLink_meta">
+                        <div class="starRating starRating-em starRating-brand rating40">
+                            <div class="starRating_star">
+                                <svg class="starRating_starShape starRating_starShape-blank">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-full">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-left starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-left"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-right starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-right"></use>
+                                </svg>
+                            </div>
+                            <div class="starRating_star">
+                                <svg class="starRating_starShape starRating_starShape-blank">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-full">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-left starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-left"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-right starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-right"></use>
+                                </svg>
+                            </div>
+                            <div class="starRating_star">
+                                <svg class="starRating_starShape starRating_starShape-blank">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-full">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-left starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-left"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-right starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-right"></use>
+                                </svg>
+                            </div>
+                            <div class="starRating_star">
+                                <svg class="starRating_starShape starRating_starShape-blank">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-full">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-left starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-left"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-right starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-right"></use>
+                                </svg>
+                            </div>
+                            <div class="starRating_star">
+                                <svg class="starRating_starShape starRating_starShape-blank">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-full">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-left starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-left"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-right starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-right"></use>
+                                </svg>
+                            </div>
+                        </div>
+                      </span>
+                                        <span class="courseLink_meta">780 reviews</span>
+                                        <a href="#" class="courseLink_hoverMeta">
+                        <span class="courseLink_hoverMetaIcon">
+                          <div class="u-scaling-svg">
+                              <svg class="u-scalingSvg__shape">
+                                  <use xlink:href="#shape-direct-link"></use>
+                              </svg>
+                          </div>
+                        </span>
+                                            <span class="courseLink_hoverMetaText">Direct to class</span>
+                                        </a>
+                                    </div>
+
+                                </li>
+
+                                <li class="courseLinks_item">
+                                    <div class="courseLink">
+                                        <div class="courseLink_icon">
+                                            <div class="u-scaling-svg">
+                                                <svg class="u-scalingSvg__shape">
+                                                    <use xlink:href="#shape-trending"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="courseLink_title">Agincourt 1415: Myth and Reality</a>
+                      <span class="courseLink_meta">
+                        <div class="starRating starRating-em starRating-brand rating40">
+                            <div class="starRating_star">
+                                <svg class="starRating_starShape starRating_starShape-blank">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-full">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-left starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-left"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-right starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-right"></use>
+                                </svg>
+                            </div>
+                            <div class="starRating_star">
+                                <svg class="starRating_starShape starRating_starShape-blank">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-full">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-left starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-left"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-right starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-right"></use>
+                                </svg>
+                            </div>
+                            <div class="starRating_star">
+                                <svg class="starRating_starShape starRating_starShape-blank">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-full">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-left starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-left"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-right starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-right"></use>
+                                </svg>
+                            </div>
+                            <div class="starRating_star">
+                                <svg class="starRating_starShape starRating_starShape-blank">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-full">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-left starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-left"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-right starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-right"></use>
+                                </svg>
+                            </div>
+                            <div class="starRating_star">
+                                <svg class="starRating_starShape starRating_starShape-blank">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-full">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-left starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-left"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-right starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-right"></use>
+                                </svg>
+                            </div>
+                        </div>
+                      </span>
+                                        <span class="courseLink_meta">780 reviews</span>
+                                        <a href="#" class="courseLink_hoverMeta">
+                        <span class="courseLink_hoverMetaIcon">
+                          <div class="u-scaling-svg">
+                              <svg class="u-scalingSvg__shape">
+                                  <use xlink:href="#shape-direct-link"></use>
+                              </svg>
+                          </div>
+                        </span>
+                                            <span class="courseLink_hoverMetaText">Direct to class</span>
+                                        </a>
+                                    </div>
+
+                                </li>
+
+                                <li class="courseLinks_item">
+                                    <div class="courseLink">
+                                        <div class="courseLink_icon">
+                                            <div class="u-scaling-svg">
+                                                <svg class="u-scalingSvg__shape">
+                                                    <use xlink:href="#shape-trending"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="courseLink_title">Agincourt 1415: Myth and Reality</a>
+                      <span class="courseLink_meta">
+                        <div class="starRating starRating-em starRating-brand rating40">
+                            <div class="starRating_star">
+                                <svg class="starRating_starShape starRating_starShape-blank">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-full">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-left starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-left"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-right starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-right"></use>
+                                </svg>
+                            </div>
+                            <div class="starRating_star">
+                                <svg class="starRating_starShape starRating_starShape-blank">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-full">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-left starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-left"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-right starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-right"></use>
+                                </svg>
+                            </div>
+                            <div class="starRating_star">
+                                <svg class="starRating_starShape starRating_starShape-blank">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-full">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-left starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-left"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-right starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-right"></use>
+                                </svg>
+                            </div>
+                            <div class="starRating_star">
+                                <svg class="starRating_starShape starRating_starShape-blank">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-full">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-left starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-left"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-right starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-right"></use>
+                                </svg>
+                            </div>
+                            <div class="starRating_star">
+                                <svg class="starRating_starShape starRating_starShape-blank">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-full">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-left starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-left"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-right starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-right"></use>
+                                </svg>
+                            </div>
+                        </div>
+                      </span>
+                                        <span class="courseLink_meta">780 reviews</span>
+                                        <a href="#" class="courseLink_hoverMeta">
+                        <span class="courseLink_hoverMetaIcon">
+                          <div class="u-scaling-svg">
+                              <svg class="u-scalingSvg__shape">
+                                  <use xlink:href="#shape-direct-link"></use>
+                              </svg>
+                          </div>
+                        </span>
+                                            <span class="courseLink_hoverMetaText">Direct to class</span>
+                                        </a>
+                                    </div>
+
+                                </li>
+
+                                <li class="courseLinks_item">
+                                    <div class="courseLink">
+                                        <div class="courseLink_icon">
+                                            <div class="u-scaling-svg">
+                                                <svg class="u-scalingSvg__shape">
+                                                    <use xlink:href="#shape-trending"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="courseLink_title">Agincourt 1415: Myth and Reality</a>
+                      <span class="courseLink_meta">
+                        <div class="starRating starRating-em starRating-brand rating40">
+                            <div class="starRating_star">
+                                <svg class="starRating_starShape starRating_starShape-blank">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-full">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-left starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-left"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-right starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-right"></use>
+                                </svg>
+                            </div>
+                            <div class="starRating_star">
+                                <svg class="starRating_starShape starRating_starShape-blank">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-full">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-left starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-left"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-right starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-right"></use>
+                                </svg>
+                            </div>
+                            <div class="starRating_star">
+                                <svg class="starRating_starShape starRating_starShape-blank">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-full">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-left starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-left"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-right starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-right"></use>
+                                </svg>
+                            </div>
+                            <div class="starRating_star">
+                                <svg class="starRating_starShape starRating_starShape-blank">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-full">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-left starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-left"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-right starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-right"></use>
+                                </svg>
+                            </div>
+                            <div class="starRating_star">
+                                <svg class="starRating_starShape starRating_starShape-blank">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-full">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-left starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-left"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-right starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-right"></use>
+                                </svg>
+                            </div>
+                        </div>
+                      </span>
+                                        <span class="courseLink_meta">780 reviews</span>
+                                        <a href="#" class="courseLink_hoverMeta">
+                        <span class="courseLink_hoverMetaIcon">
+                          <div class="u-scaling-svg">
+                              <svg class="u-scalingSvg__shape">
+                                  <use xlink:href="#shape-direct-link"></use>
+                              </svg>
+                          </div>
+                        </span>
+                                            <span class="courseLink_hoverMetaText">Direct to class</span>
+                                        </a>
+                                    </div>
+
+                                </li>
+
+                                <li class="courseLinks_item">
+                                    <div class="courseLink">
+                                        <div class="courseLink_icon">
+                                            <div class="u-scaling-svg">
+                                                <svg class="u-scalingSvg__shape">
+                                                    <use xlink:href="#shape-trending"></use>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="courseLink_title">Agincourt 1415: Myth and Reality</a>
+                      <span class="courseLink_meta">
+                        <div class="starRating starRating-em starRating-brand rating40">
+                            <div class="starRating_star">
+                                <svg class="starRating_starShape starRating_starShape-blank">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-full">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-left starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-left"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-right starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-right"></use>
+                                </svg>
+                            </div>
+                            <div class="starRating_star">
+                                <svg class="starRating_starShape starRating_starShape-blank">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-full">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-left starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-left"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-right starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-right"></use>
+                                </svg>
+                            </div>
+                            <div class="starRating_star">
+                                <svg class="starRating_starShape starRating_starShape-blank">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-full">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-left starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-left"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-right starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-right"></use>
+                                </svg>
+                            </div>
+                            <div class="starRating_star">
+                                <svg class="starRating_starShape starRating_starShape-blank">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-full">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-left starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-left"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-right starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-right"></use>
+                                </svg>
+                            </div>
+                            <div class="starRating_star">
+                                <svg class="starRating_starShape starRating_starShape-blank">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-full">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-full"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-left starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-left"></use>
+                                </svg>
+                                <svg class="starRating_starShape starRating_starShape-right starRating_starShape-half">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#shape-star-half-right"></use>
+                                </svg>
+                            </div>
+                        </div>
+                      </span>
+                                        <span class="courseLink_meta">780 reviews</span>
+                                        <a href="#" class="courseLink_hoverMeta">
+                        <span class="courseLink_hoverMetaIcon">
+                          <div class="u-scaling-svg">
+                              <svg class="u-scalingSvg__shape">
+                                  <use xlink:href="#shape-direct-link"></use>
+                              </svg>
+                          </div>
+                        </span>
+                                            <span class="courseLink_hoverMetaText">Direct to class</span>
+                                        </a>
+                                    </div>
+
+                                </li>
+
+
+                            </ul>
+
+                            <a href="#" class="searchModal_seeMore">See more</a>
+                        </div>
+
+                        <div class="searchModal_contentBlock">
+                            <h3 class="searchModal_sectionTitle">Popular</h3>
+
+                            <ul class="courseLinks">
+                                <li class="courseLinks_item">
+
+                                    <div class="courseLink">
+                                        <a href="#" class="courseLink_title">Agincourt 1415: Myth and Reality</a>
+                                        <span class="courseLink_meta">780 interested students</span>
+                                        <a href="#" class="courseLink_hoverMeta">
+                        <span class="courseLink_hoverMetaIcon">
+                            <div class="u-scaling-svg">
+                                <svg class="u-scalingSvg__shape">
+                                    <use xlink:href="#shape-direct-link"></use>
+                                </svg>
+                            </div>
+                        </span>
+                                            <span class="courseLink_hoverMetaText">Direct to class</span>
+                                        </a>
+                                    </div>
+
+                                </li>
+
+                                <li class="courseLinks_item">
+
+                                    <div class="courseLink">
+                                        <a href="#" class="courseLink_title">Agincourt 1415: Myth and Reality</a>
+                                        <span class="courseLink_meta">780 interested students</span>
+                                        <a href="#" class="courseLink_hoverMeta">
+                        <span class="courseLink_hoverMetaIcon">
+                            <div class="u-scaling-svg">
+                                <svg class="u-scalingSvg__shape">
+                                    <use xlink:href="#shape-direct-link"></use>
+                                </svg>
+                            </div>
+                        </span>
+                                            <span class="courseLink_hoverMetaText">Direct to class</span>
+                                        </a>
+                                    </div>
+
+                                </li>
+
+                                <li class="courseLinks_item">
+
+                                    <div class="courseLink">
+                                        <a href="#" class="courseLink_title">Agincourt 1415: Myth and Reality</a>
+                                        <span class="courseLink_meta">780 interested students</span>
+                                        <a href="#" class="courseLink_hoverMeta">
+                        <span class="courseLink_hoverMetaIcon">
+                            <div class="u-scaling-svg">
+                                <svg class="u-scalingSvg__shape">
+                                    <use xlink:href="#shape-direct-link"></use>
+                                </svg>
+                            </div>
+                        </span>
+                                            <span class="courseLink_hoverMetaText">Direct to class</span>
+                                        </a>
+                                    </div>
+
+                                </li>
+
+                                <li class="courseLinks_item">
+
+                                    <div class="courseLink">
+                                        <a href="#" class="courseLink_title">Agincourt 1415: Myth and Reality</a>
+                                        <span class="courseLink_meta">780 interested students</span>
+                                        <a href="#" class="courseLink_hoverMeta">
+                        <span class="courseLink_hoverMetaIcon">
+                            <div class="u-scaling-svg">
+                                <svg class="u-scalingSvg__shape">
+                                    <use xlink:href="#shape-direct-link"></use>
+                                </svg>
+                            </div>
+                        </span>
+                                            <span class="courseLink_hoverMetaText">Direct to class</span>
+                                        </a>
+                                    </div>
+
+                                </li>
+
+                                <li class="courseLinks_item">
+
+                                    <div class="courseLink">
+                                        <a href="#" class="courseLink_title">Agincourt 1415: Myth and Reality</a>
+                                        <span class="courseLink_meta">780 interested students</span>
+                                        <a href="#" class="courseLink_hoverMeta">
+                        <span class="courseLink_hoverMetaIcon">
+                            <div class="u-scaling-svg">
+                                <svg class="u-scalingSvg__shape">
+                                    <use xlink:href="#shape-direct-link"></use>
+                                </svg>
+                            </div>
+                        </span>
+                                            <span class="courseLink_hoverMetaText">Direct to class</span>
+                                        </a>
+                                    </div>
+
+                                </li>
+
+
+                            </ul>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- search modal end -->
