@@ -134,11 +134,11 @@
                         </div>
 
                         <div class="searchModal_contentBlock">
-                            <h3 class="searchModal_sectionTitle">Popular</h3>
+                            <h3 class="searchModal_sectionTitle">New and Popular</h3>
 
                             <ul class="courseLinks">
                                 {% set popularCount = 0 %}
-                                {% for result in popularCourses.hits.hits if popularCount < 5 %}
+                                {% for result in popularCourses.hits.hits if popularCount < 4 %}
                                     {% set course = result._source %}
                                 <li class="courseLinks_item">
 
@@ -159,7 +159,7 @@
 
                                 </li>
 
-                                {% set trendingCount = trendingCount + 1 %}
+                                {% set popularCount = popularCount + 1 %}
                                 {% endfor %}
 
                             </ul>

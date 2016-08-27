@@ -88,7 +88,11 @@ class SearchController extends Controller{
         $popular =  $cache->get('popular_courses', function(){
             $cl = $this->get('course_listing');
             $courseIds = array(5992,4215,6671,6103,5643);
-            return $cl->byCourseIds($courseIds);
+            $data = $cl->byCourseIds($courseIds);
+            usort($data['courses']['hits']['hits'],function($a,$b){
+                return $a['_source']['followed'] < $b['_source']['followed'];
+            });
+            return $data;
         });
 
         return $this->render('ClassCentralSiteBundle:Search:search.modal.html.twig', array(
