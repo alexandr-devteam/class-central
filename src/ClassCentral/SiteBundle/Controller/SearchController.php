@@ -71,4 +71,15 @@ class SearchController extends Controller{
         $results = $esClient->suggest( $params );
         return new Response( json_encode($results) );
     }
+
+    /**
+     * Not a route. Is used to include the search modal on differnt pages.
+     * @param Request $request
+     */
+    public function searchModalAction(Request $request)
+    {
+        return $this->render('ClassCentralSiteBundle:Search:search.modal.html.twig', array(
+
+        ));
+    }
 }

@@ -535,7 +535,7 @@
 {% include 'ClassCentralSiteBundle:Helpers:rating.popup.html.twig' %}
 
 {# Search box #}
-{% include 'ClassCentralSiteBundle:Helpers:search.modal.html.twig' %}
+    {% render controller("ClassCentralSiteBundle:Search:searchModal", {}) %}
 
 
     {# Signup form when a non signed up users adds a course to MOOC tracker #}
