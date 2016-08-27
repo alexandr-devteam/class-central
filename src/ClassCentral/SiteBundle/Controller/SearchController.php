@@ -85,10 +85,15 @@ class SearchController extends Controller{
             $cl = $this->get('course_listing');
             return $cl->trending();
         });
-
+        $popular =  $cache->get('popular_courses', function(){
+            $cl = $this->get('course_listing');
+            $courseIds = array(5992,4215,6671,6103,5643);
+            return $cl->byCourseIds($courseIds);
+        });
 
         return $this->render('ClassCentralSiteBundle:Search:search.modal.html.twig', array(
-            'trendingCourses' => $trending['courses']
+            'trendingCourses' => $trending['courses'],
+            'popularCourses' => $popular['courses']
         ));
     }
 }

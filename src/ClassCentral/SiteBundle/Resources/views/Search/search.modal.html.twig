@@ -137,101 +137,30 @@
                             <h3 class="searchModal_sectionTitle">Popular</h3>
 
                             <ul class="courseLinks">
+                                {% set popularCount = 0 %}
+                                {% for result in popularCourses.hits.hits if popularCount < 5 %}
+                                    {% set course = result._source %}
                                 <li class="courseLinks_item">
 
                                     <div class="courseLink">
-                                        <a href="#" class="courseLink_title">Agincourt 1415: Myth and Reality</a>
-                                        <span class="courseLink_meta">780 interested students</span>
-                                        <a href="#" class="courseLink_hoverMeta">
-                        <span class="courseLink_hoverMetaIcon">
-                            <div class="u-scaling-svg">
-                                <svg class="u-scalingSvg__shape">
-                                    <use xlink:href="#shape-direct-link"></use>
-                                </svg>
-                            </div>
-                        </span>
-                                            <span class="courseLink_hoverMetaText">Direct to class</span>
+                                        <a href="{{ path('ClassCentralSiteBundle_mooc',{'id': course.id, 'slug': course.slug} ) }}" class="courseLink_title">{{ course.name }}</a>
+                                        <span class="courseLink_meta">{{ course.followed }} interested students</span>
+                                        <a href="{{ course.nextSession.url }}" class="courseLink_hoverMeta">
+                                    <span class="courseLink_hoverMetaIcon">
+                                        <div class="u-scaling-svg">
+                                            <svg class="u-scalingSvg__shape">
+                                                <use xlink:href="#shape-direct-link"></use>
+                                            </svg>
+                                        </div>
+                                    </span>
+                                            <span class="courseLink_hoverMetaText">Go to class</span>
                                         </a>
                                     </div>
 
                                 </li>
 
-                                <li class="courseLinks_item">
-
-                                    <div class="courseLink">
-                                        <a href="#" class="courseLink_title">Agincourt 1415: Myth and Reality</a>
-                                        <span class="courseLink_meta">780 interested students</span>
-                                        <a href="#" class="courseLink_hoverMeta">
-                        <span class="courseLink_hoverMetaIcon">
-                            <div class="u-scaling-svg">
-                                <svg class="u-scalingSvg__shape">
-                                    <use xlink:href="#shape-direct-link"></use>
-                                </svg>
-                            </div>
-                        </span>
-                                            <span class="courseLink_hoverMetaText">Direct to class</span>
-                                        </a>
-                                    </div>
-
-                                </li>
-
-                                <li class="courseLinks_item">
-
-                                    <div class="courseLink">
-                                        <a href="#" class="courseLink_title">Agincourt 1415: Myth and Reality</a>
-                                        <span class="courseLink_meta">780 interested students</span>
-                                        <a href="#" class="courseLink_hoverMeta">
-                        <span class="courseLink_hoverMetaIcon">
-                            <div class="u-scaling-svg">
-                                <svg class="u-scalingSvg__shape">
-                                    <use xlink:href="#shape-direct-link"></use>
-                                </svg>
-                            </div>
-                        </span>
-                                            <span class="courseLink_hoverMetaText">Direct to class</span>
-                                        </a>
-                                    </div>
-
-                                </li>
-
-                                <li class="courseLinks_item">
-
-                                    <div class="courseLink">
-                                        <a href="#" class="courseLink_title">Agincourt 1415: Myth and Reality</a>
-                                        <span class="courseLink_meta">780 interested students</span>
-                                        <a href="#" class="courseLink_hoverMeta">
-                        <span class="courseLink_hoverMetaIcon">
-                            <div class="u-scaling-svg">
-                                <svg class="u-scalingSvg__shape">
-                                    <use xlink:href="#shape-direct-link"></use>
-                                </svg>
-                            </div>
-                        </span>
-                                            <span class="courseLink_hoverMetaText">Direct to class</span>
-                                        </a>
-                                    </div>
-
-                                </li>
-
-                                <li class="courseLinks_item">
-
-                                    <div class="courseLink">
-                                        <a href="#" class="courseLink_title">Agincourt 1415: Myth and Reality</a>
-                                        <span class="courseLink_meta">780 interested students</span>
-                                        <a href="#" class="courseLink_hoverMeta">
-                        <span class="courseLink_hoverMetaIcon">
-                            <div class="u-scaling-svg">
-                                <svg class="u-scalingSvg__shape">
-                                    <use xlink:href="#shape-direct-link"></use>
-                                </svg>
-                            </div>
-                        </span>
-                                            <span class="courseLink_hoverMetaText">Direct to class</span>
-                                        </a>
-                                    </div>
-
-                                </li>
-
+                                {% set trendingCount = trendingCount + 1 %}
+                                {% endfor %}
 
                             </ul>
                         </div>
