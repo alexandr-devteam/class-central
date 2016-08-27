@@ -78,8 +78,17 @@ class SearchController extends Controller{
      */
     public function searchModalAction(Request $request)
     {
-        return $this->render('ClassCentralSiteBundle:Search:search.modal.html.twig', array(
+        $cache = $this->get('Cache');
 
+        // Get Top 10 courses based on recent reviews.
+        $trending = $cache->get('trending_courses', function(){
+            $cl = $this->get('course_listing');
+            return $cl->trending();
+        });
+
+
+        return $this->render('ClassCentralSiteBundle:Search:search.modal.html.twig', array(
+            'trendingCourses' => $trending['courses']
         ));
     }
 }
