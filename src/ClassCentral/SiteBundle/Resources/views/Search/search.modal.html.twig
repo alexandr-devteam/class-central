@@ -145,7 +145,7 @@
                                     <div class="courseLink">
                                         <a href="{{ path('ClassCentralSiteBundle_mooc',{'id': course.id, 'slug': course.slug} ) }}" class="courseLink_title">{{ course.name }}</a>
                                         <span class="courseLink_meta">{{ course.followed }} interested students</span>
-                                        <a href="{{ course.nextSession.url }}" class="courseLink_hoverMeta">
+                                        <a href="{{ course.nextSession.url }}" target="_blank" class="courseLink_hoverMeta">
                                     <span class="courseLink_hoverMetaIcon">
                                         <div class="u-scaling-svg">
                                             <svg class="u-scalingSvg__shape">
