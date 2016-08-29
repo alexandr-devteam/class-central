@@ -25,7 +25,7 @@ class UserSession
     const MT_SEARCH_TERM_KEY = 'mooc_tracker_search_terms';
     const MT_REFERRAL_KEY = 'mooc_tracker_referral';
     const LIBRARY_COURSES_KEY = 'user_courses_library';
-    const USER_RECENTLY_VIEWED = 'user_recently_view';
+    const USER_RECENTLY_VIEWED = 'user_recently_viewed';
     const NEWSLETTER_USER_EMAIL = 'newsletter_user_email';
     const USER_REVIEWED_COURSES = 'user_review_course_ids';
     const USER_REVIEWS  = 'user_review_ids';
@@ -478,30 +478,38 @@ class UserSession
 
     /**
      * Saves recently viewed courses in session
-     * @param $courseId
+     * @param $course
      */
-    public function saveRecentlyViewed($courseId)
+    public function saveRecentlyViewed($course)
     {
         $courses = $this->getRecentlyViewed();
+        $id = $course['id'];
+        $courseInfo =  array(
+            'id' => $course['id'],
+            'slug' =>  $course['slug'],
+            'name' => $course['name']
+        );
+
         if(empty($courses))
         {
             $courses = array();
-            $courses[] = $courseId;
+            $courses[] =$courseInfo;
         }
         else
         {
+
             // Remove the course is it already exists
-            $pos = array_search($courseId,$courses);
-            if(is_numeric($pos))
+            $pos = array_search($id,array_column($courses,'id'));
+            if (is_numeric($pos))
             {
                 unset($courses[$pos]);
             }
 
             // Push the course at the head
-            array_unshift($courses, $courseId);
+            array_unshift($courses, $courseInfo);
 
-            // Save 5 courses
-            $courses = array_slice($courses,0,5);
+            // Save 3 courses
+            $courses = array_slice($courses,0,3);
         }
 
         $this->session->set(self::USER_RECENTLY_VIEWED,$courses);
@@ -557,7 +565,7 @@ class UserSession
         $follows = $this->getNextCourseFollows();
         if(isset($follows[$item]))
         {
-            $follows[$item][] = array_diff($follows[$item][], array($itemId));
+            $follows[$item][] = array_diff($follows[$item], array($itemId));
         }
         $this->session->set(self::NEXT_COURSE_WIZARD_FOLLOWS, $follows);
     }

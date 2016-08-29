@@ -95,9 +95,19 @@ class SearchController extends Controller{
             return $data;
         });
 
+        $recentlyViewedCourses = $this->get('user_session')->getRecentlyViewed();
+
+        $searchTerms = array(
+            'python','java','machine learning','writing','statistics','psychology','finance','algorithms', 'leadership',
+            'economics','nutrition','physics'
+        );
+
+
         return $this->render('ClassCentralSiteBundle:Search:search.modal.html.twig', array(
             'trendingCourses' => $trending['courses'],
-            'popularCourses' => $popular['courses']
+            'popularCourses' => $popular['courses'],
+            'searchTerms' => $searchTerms,
+            'recentlyViewed' => $recentlyViewedCourses
         ));
     }
 }

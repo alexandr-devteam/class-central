@@ -426,12 +426,12 @@ class CourseController extends Controller
        $recentlyViewedCourses = array();
        if(!empty($recentlyViewedCourseIds))
        {
-           foreach($recentlyViewedCourseIds as $id)
+           foreach($recentlyViewedCourseIds as $id => $courseInfo)
            {
                $recentlyViewedCourses[] = $this->get('Cache')->get( 'course_' . $id, array($this,'getCourseDetails'), array($id,$em) );
            }
        }
-       $userSession->saveRecentlyViewed($courseId);
+       $userSession->saveRecentlyViewed($course);
 
        // URL of the current page
        $course['pageUrl'] = $this->container->getParameter('baseurl') . $this->get('router')->generate('ClassCentralSiteBundle_mooc', array('id' => $course['id'],'slug' => $course['slug']));

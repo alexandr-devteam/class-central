@@ -23,28 +23,29 @@
                             </div>
                             <div class="js-dynamicSearchContent">
                                 <div class="searchModal_contentBlock searchModal_contentBlock-reducedSpacing">
-                                    <h3 class="searchModal_sectionTitle searchModal_sectionTitle-reducedMargin">Previous searches</h3>
+                                    <h3 class="searchModal_sectionTitle searchModal_sectionTitle-reducedMargin">Popular searches</h3>
                                     <div class="searchModal_text">
-                                        <a href="#">marketing</a>, <a href="#">marketing science</a>, <a href="#">marketing</a>, <a href="#">marketing science</a>, <a href="#">marketing</a>, <a href="#">marketing science</a>,
-                                        <a href="#">marketing</a>, <a href="#">marketing science</a>, <a href="#">marketing science</a>
+                                        {% for searchTerm in searchTerms %}
+                                            <a href="{{ path('ClassCentralSiteBundle_search',{q:searchTerm}) }}">{{ searchTerm }}</a>,
+                                        {% endfor %}
+                                        {% set searchTerm = 'robotics' %} {# last search term in the list doesn't need a comma #}
+                                        <a href="#">{{ searchTerm }}</a>
                                     </div>
                                 </div>
 
+                                {% if recentlyViewed is not empty %}
                                 <div class="searchModal_contentBlock searchModal_contentBlock-reducedSpacing">
                                     <h3 class="searchModal_sectionTitle searchModal_sectionTitle-reducedMargin">Recently viewed courses</h3>
                                     <div class="searchModal_text">
+                                        {% for course in recentlyViewed %}
                                         <div>
-                                            <a href="#">Creating Engaging Environments for English Language Classrooms</a>
+                                            <a href="#">{{ course.name }}</a>
                                         </div>
-                                        <div>
-                                            <a href="#">How Things Work: An Introduction to Physics</a>
-                                        </div>
-                                        <div>
-                                            <a href="#">Programming for Everybody (Getting Started With Python)</a>
-                                        </div>
+                                        {% endfor %}
 
                                     </div>
                                 </div>
+                                {% endif %}
                             </div>
                         </div>
 
