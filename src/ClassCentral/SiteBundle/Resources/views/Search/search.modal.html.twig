@@ -136,34 +136,36 @@
 
                         <div class="searchModal_contentBlock">
                             <h3 class="searchModal_sectionTitle">New and Popular</h3>
+                            {% if popularCourses.hits is defined and popularCourses.hits.hits is defined %}
+                                <ul class="courseLinks">
 
-                            <ul class="courseLinks">
-                                {% set popularCount = 0 %}
-                                {% for result in popularCourses.hits.hits if popularCount < 4 %}
-                                    {% set course = result._source %}
-                                <li class="courseLinks_item">
+                                    {% set popularCount = 0 %}
+                                    {% for result in popularCourses.hits.hits if popularCount < 4 %}
+                                        {% set course = result._source %}
+                                    <li class="courseLinks_item">
 
-                                    <div class="courseLink">
-                                        <a href="{{ path('ClassCentralSiteBundle_mooc',{'id': course.id, 'slug': course.slug} ) }}" class="courseLink_title">{{ course.name }}</a>
-                                        <span class="courseLink_meta">{{ course.followed }} interested students</span>
-                                        <a href="{{ course.nextSession.url }}" target="_blank" class="courseLink_hoverMeta">
-                                    <span class="courseLink_hoverMetaIcon">
-                                        <div class="u-scaling-svg">
-                                            <svg class="u-scalingSvg__shape">
-                                                <use xlink:href="#shape-direct-link"></use>
-                                            </svg>
+                                        <div class="courseLink">
+                                            <a href="{{ path('ClassCentralSiteBundle_mooc',{'id': course.id, 'slug': course.slug} ) }}" class="courseLink_title">{{ course.name }}</a>
+                                            <span class="courseLink_meta">{{ course.followed }} interested students</span>
+                                            <a href="{{ course.nextSession.url }}" target="_blank" class="courseLink_hoverMeta">
+                                        <span class="courseLink_hoverMetaIcon">
+                                            <div class="u-scaling-svg">
+                                                <svg class="u-scalingSvg__shape">
+                                                    <use xlink:href="#shape-direct-link"></use>
+                                                </svg>
+                                            </div>
+                                        </span>
+                                                <span class="courseLink_hoverMetaText">Go to class</span>
+                                            </a>
                                         </div>
-                                    </span>
-                                            <span class="courseLink_hoverMetaText">Go to class</span>
-                                        </a>
-                                    </div>
 
-                                </li>
+                                    </li>
 
-                                {% set popularCount = popularCount + 1 %}
-                                {% endfor %}
+                                    {% set popularCount = popularCount + 1 %}
+                                    {% endfor %}
 
-                            </ul>
+                                </ul>
+                            {% endif %}
                         </div>
 
 
