@@ -39,7 +39,7 @@
                                     <div class="searchModal_text">
                                         {% for course in recentlyViewed %}
                                         <div>
-                                            <a href="#">{{ course.name }}</a>
+                                            <a href="{{ path('ClassCentralSiteBundle_mooc',{id:course.id,slug:course.slug}) }}">{{ course.name }}</a>
                                         </div>
                                         {% endfor %}
 
