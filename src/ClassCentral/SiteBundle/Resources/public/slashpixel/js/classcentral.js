@@ -1057,7 +1057,11 @@ jQuery(function($) {
         $('#searchModal').modal('show');
     });
 
-    $('.js-searchModalInput').on('focus', function (e) {
+    $('#searchModal').on('shown.bs.modal', function (e) {
+        $('.js-searchModalInput.tt-input').focus();
+    });
+
+    $('.js-searchModalInput').on('keyup', function (e) {
         $(this).closest('.js-searchWrap').removeClass('is-middle');
         $(this).closest('.js-searchWrap').find('.js-dynamicSearchContent *').fadeOut(200);
     });
@@ -1146,7 +1150,7 @@ jQuery(function($) {
             }
         })
         .on('typeahead:opened', function () {
-            $('.js-dynamicSearchContent').hide();
+
         })
         .on('typeahead:closed', function () {
             $('.js-dynamicSearchContent').show();
@@ -1500,7 +1504,27 @@ jQuery(function($) {
                 arrowOffset: "center",
                 placement: "bottom",
                 showCloseButton: false
-            },
+            }
+        ]
+    };
+
+    var tour2 = {
+        id: "search_tour",
+        i18n: {
+            closeTooltip: "Close",
+            nextBtn: 'Next tip'
+        },
+        steps: [
+            {
+                title: "Ctrl + L to learn",
+                content: "Adfajs dlaskfjasl faskl fasdl fas f",
+                target: document.querySelector("#tour-point-search"),
+                width: 300,
+                xOffset: "center",
+                arrowOffset: "center",
+                placement: "bottom",
+                showCloseButton: false
+            }
         ]
     };
 
@@ -1523,6 +1547,7 @@ jQuery(function($) {
         });
     };
     initTourPoints(tour);
+    initTourPoints(tour2);
 
 
 

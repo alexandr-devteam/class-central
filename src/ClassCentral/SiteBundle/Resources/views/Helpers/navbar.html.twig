@@ -28,6 +28,7 @@
                     {% else %}
                         User Menu
                     {% endif %}
+                    <b class="caret"></b>
                 </a>
                 <ul class="mainMenu_sub mainMenu_sub-right">
 
@@ -88,7 +89,7 @@
 
 
         <li class="mainMenu_item dropdown">
-          <a href="#" class="mainMenu_link js-toggleSub">Courses</a>
+          <a href="#" class="mainMenu_link js-toggleSub">Courses <b class="caret"></b></a>
           
           <ul class="mainMenu_sub">
 
@@ -145,7 +146,13 @@
 
     <div class="navbar_right">
 
+        <a href="#" class="pulseCircle js-tour-point" id="tour-point-search" data-step-nr="0">
+            <div class="pulseCircle_dot"></div>
+            <div class="pulseCircle_pulse"></div>
+        </a>
+
       <div class="navbar_search">
+        
 
         <a href="#" class="searchLink js-openSearchModal" onmousedown="ga('send','event', '{{ navEventName }}', 'Search')">
           <div class="searchLink_icon">
@@ -170,7 +177,7 @@
         {% if app.user %}
             <ul class="mainMenu">
                 <li class="mainMenu_item dropdown">
-                    <a href="#" class="mainMenu_link js-toggleSub">
+                    <a href="#" class="mainMenu_link mainMenu_link-withImage js-toggleSub">
                         {% if app.user.name %}
                             {% set n =  app.user.name|split(' ') %}
                             {% set name = n[0] %}
@@ -183,6 +190,8 @@
                         {% else %}
                             User Menu
                         {% endif %}
+                        <b class="caret"></b>
+                        <img src="http://placehold.it/50x50">
                     </a>
                     <ul class="mainMenu_sub mainMenu_sub-right">
 
@@ -233,12 +242,12 @@
                     </a>
                 </li>
 
-                    <li class="mainMenu_item mainMenu_item-spacer">/</li>
-                    <li class="mainMenu_item">
-                        <a href="{{ path('signup') }}" id="navbar-create-free-account" class="mainMenu_link" title="Class Central Signup" onClick="ga('send','event', '{{ navEventName }}', 'Class Central Signup User Menu')" title="Class Central Signup">
-                            Sign Up
-                        </a>
-                    </li>
+                <li class="mainMenu_item mainMenu_item-spacer">/</li>
+                <li class="mainMenu_item">
+                    <a href="{{ path('signup') }}" id="navbar-create-free-account" class="mainMenu_link" title="Class Central Signup" onClick="ga('send','event', '{{ navEventName }}', 'Class Central Signup User Menu')" title="Class Central Signup">
+                        Sign Up
+                    </a>
+                </li>
             </ul>
         {% endif %}
 

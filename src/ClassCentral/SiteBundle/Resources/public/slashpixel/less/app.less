@@ -99,6 +99,10 @@ unwanted scrollbars
   pointer-events: none;
 }
 
+.caret {
+  margin-top: -3px;
+}
+
 .icon,
 .icon-plus,
 .icon-minus,
@@ -942,6 +946,21 @@ a.searchLink {
   } 
 }
 
+ .mainMenu_link-withImage {
+   position: relative;
+   margin-right: 2.6667em;
+ }
+
+ .mainMenu_link-withImage img {
+   display: block;
+   width: 3.3333em;
+   height: auto;
+   position: absolute;
+   border-radius: 4.1667em;
+   right: -4.25em;
+   top: -.75em;
+ }
+
 
 @media (min-width: @grid-float-breakpoint) {
   .mainMenu {
@@ -976,7 +995,7 @@ a.searchLink {
     position: absolute;
     background-color: @navbar-default-bg;
     padding-left: 0;
-    width: 12.5em;
+    width: 16.5em;
     box-shadow: 0 6px 12px rgba(0,0,0,0.175);
     top: 4.4167em;
     left: -1.6667em;
@@ -10130,6 +10149,7 @@ div.hopscotch-bubble .hopscotch-actions {
 .searchModal_sidebar {
   background-color: #f9f9f9;
   border-top: 1px solid #e5e5e5;
+  display: none;
 }
 
 .searchModal_sidebarContent {
@@ -10281,6 +10301,7 @@ div.hopscotch-bubble .hopscotch-actions {
   }
 
   .searchModal_sidebar {
+    display: block;
     border-left: 1px solid #e5e5e5;
     border-top: 0;
     width: 46%;
