@@ -3,19 +3,16 @@
 namespace ClassCentral\SiteBundle\Controller;
 
 use ClassCentral\SiteBundle\Entity\MoocTrackerCourse;
-use ClassCentral\SiteBundle\Entity\MoocTrackerSearchTerm;
+use ClassCentral\SiteBundle\Entity\User;
 use ClassCentral\SiteBundle\Entity\UserCourse;
 use ClassCentral\SiteBundle\Entity\UserPreference;
 use ClassCentral\SiteBundle\Entity\VerificationToken;
 use ClassCentral\SiteBundle\Form\SignupType;
-use ClassCentral\SiteBundle\Services\UserSession;
+use ClassCentral\SiteBundle\Form\UserType;
 use ClassCentral\SiteBundle\Utility\CryptUtility;
 use ClassCentral\SiteBundle\Utility\UniversalHelper;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
-use ClassCentral\SiteBundle\Entity\User;
-use ClassCentral\SiteBundle\Form\UserType;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 
@@ -280,55 +277,48 @@ class UserController extends Controller
 
     /**
      * Create and save the user
+     *
      * @param Request $request
+     *
+     * @return Response
      */
     public function createUserAction(Request $request)
     {
         $userService = $this->get('user_service');
-        $form   = $this->createForm(new SignupType(), new User(),array(
+
+        $form = $this->createForm(new SignupType(), new User(), array(
             'action' => $this->generateUrl('signup_create_user')
         ));
-        $form->handleRequest($request);
-        $modal =  $form["modal"]->getData(); // if modal = 1, it means the form has been submitted through a signup modal via AJAX
 
-        if($form->isValid())
-        {
+        $form->handleRequest($request);
+
+        $isAjax = $request->isXmlHttpRequest();
+
+        if ($form->isValid()) {
             $user = $form->getData();
-            $src =   $request->query->get('src');
+            $src = $request->query->get('src');
             $url = $userService->createUser($user, true, $src);
 
-            if($modal)
-            {
+            if ($isAjax) {
                 return UniversalHelper::getAjaxResponse(true);
             }
-            else
-            {
-                return $this->redirect($url);
-            }
 
+            return $this->redirect($url);
         }
 
-
-        if( $modal )
-        {
+        if ($isAjax) {
             // Get the error message
             $error = 'Some error occurred';
             $errorMessages = $this->getErrorMessages($form);
-            foreach($errorMessages as $errorMessage)
-            {
+
+            foreach ($errorMessages as $errorMessage) {
                 $error = $errorMessage[0];
                 break;
             }
 
-            return UniversalHelper::getAjaxResponse(false,$error);
-        }
-        else
-        {
-            return $this->signUpAction($form);
+            return UniversalHelper::getAjaxResponse(false, $error);
         }
 
-
-        // Form is not valid
         return $this->signUpAction($form);
     }
 
